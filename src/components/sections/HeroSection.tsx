@@ -15,7 +15,15 @@ export function HeroSection() {
       style={{ overflowX: "clip" }}
     >
       {/* ── Marquee heading ── */}
-      <div className="overflow-hidden mt-6 sm:mt-4 md:-mt-5 relative z-0 select-none">
+      <div
+        className="relative z-0 select-none"
+        style={{
+          transform: "rotate(-6deg)",
+          margin: "2rem -8vw",
+          padding: "0.5rem 0",
+          overflow: "hidden",
+        }}
+      >
         <div
           className="flex whitespace-nowrap"
           style={{ animation: "marquee-left 12s linear infinite" }}
