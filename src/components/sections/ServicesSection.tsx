@@ -59,8 +59,8 @@ export function ServicesSection() {
                 {s.name}
               </h3>
               <p
-                className="font-light leading-relaxed max-w-2xl transition-colors duration-500 group-hover:text-white/80"
-                style={{ fontSize: "clamp(0.85rem, 1.6vw, 1.25rem)", opacity: 0.6 }}
+                className="font-light leading-relaxed max-w-2xl transition-all duration-500 opacity-60 group-hover:opacity-100 group-hover:text-white"
+                style={{ fontSize: "clamp(0.85rem, 1.6vw, 1.25rem)" }}
               >
                 {s.desc}
               </p>
