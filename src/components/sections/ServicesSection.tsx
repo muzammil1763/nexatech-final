@@ -30,39 +30,28 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ x: 12 }}
-            className="group relative flex items-start gap-6 md:gap-10 py-8 sm:py-10 md:py-12 cursor-pointer overflow-hidden"
+            className="flex items-start gap-6 md:gap-10 py-8 sm:py-10 md:py-12"
             style={{
               borderTop: i === 0 ? "1px solid rgba(12, 12, 12, 0.15)" : "none",
               borderBottom: "1px solid rgba(12, 12, 12, 0.15)",
             }}
           >
-            <motion.span
-              aria-hidden
-              className="absolute inset-0 -z-0"
-              initial={{ scaleX: 0 }}
-              whileHover={{ scaleX: 1 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              style={{ background: "#0C0C0C", transformOrigin: "left" }}
-            />
-            {/* Number */}
             <div
-              className="font-black flex-shrink-0 relative z-10 text-[#0C0C0C] group-hover:text-white transition-colors duration-500"
-              style={{ fontSize: "clamp(3rem, 10vw, 140px)", lineHeight: 1 }}
+              className="font-black flex-shrink-0"
+              style={{ color: "#0C0C0C", fontSize: "clamp(3rem, 10vw, 140px)", lineHeight: 1 }}
             >
               {s.n}
             </div>
-            {/* Text */}
-            <div className="flex flex-col gap-3 md:gap-4 pt-2 relative z-10 flex-1">
+            <div className="flex flex-col gap-3 md:gap-4 pt-2 flex-1">
               <h3
-                className="font-medium uppercase text-[#0C0C0C] group-hover:text-white transition-colors duration-500"
-                style={{ fontSize: "clamp(1rem, 2.2vw, 2.1rem)", lineHeight: 1.1 }}
+                className="font-medium uppercase"
+                style={{ color: "#0C0C0C", fontSize: "clamp(1rem, 2.2vw, 2.1rem)", lineHeight: 1.1 }}
               >
                 {s.name}
               </h3>
               <p
-                className="font-light leading-relaxed max-w-2xl text-[#0C0C0C] group-hover:text-white transition-colors duration-500"
-                style={{ fontSize: "clamp(0.85rem, 1.6vw, 1.25rem)" }}
+                className="font-light leading-relaxed max-w-2xl"
+                style={{ color: "#0C0C0C", fontSize: "clamp(0.85rem, 1.6vw, 1.25rem)", opacity: 0.6 }}
               >
                 {s.desc}
               </p>
