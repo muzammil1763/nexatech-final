@@ -47,7 +47,7 @@ export function Navbar() {
         <img
           src={nexaLogo}
           alt="Nexa Tech"
-          className="h-28 w-auto object-contain drop-shadow-lg"
+          className="h-16 w-auto object-contain drop-shadow-lg"
         />
       </a>
 
