@@ -4,10 +4,11 @@ import { Menu, X } from "lucide-react";
 import nexaLogo from "@/assets/nexa-logo.png";
 
 const navLinks = [
-  { label: "About", href: "#about" },
+  { label: "Home",     href: "#top" },
+  { label: "About",    href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact",  href: "#contact" },
 ];
 
 function smoothScroll(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
@@ -31,57 +32,47 @@ export function Navbar() {
 
   return (
     <motion.header
-      initial={{ y: -60, opacity: 0 }}
+      initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4"
+      className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center pt-3"
     >
-      {/* Desktop pill */}
+      {/* ── Logo above the pill ── */}
+      <a
+        href="#top"
+        onClick={(e) => { smoothScroll(e, "#top"); setActive("home"); }}
+        aria-label="Nexa Tech home"
+        className="hidden md:flex items-center justify-center mb-1"
+      >
+        <img
+          src={nexaLogo}
+          alt="Nexa Tech"
+          className="h-14 w-auto object-contain drop-shadow-lg"
+        />
+      </a>
+
+      {/* ── Desktop links pill ── */}
       <motion.nav
         animate={{
-          backgroundColor: scrolled ? "rgba(10,10,10,0.85)" : "rgba(10,10,10,0.55)",
+          backgroundColor: scrolled ? "rgba(10,10,10,0.88)" : "rgba(10,10,10,0.55)",
           boxShadow: scrolled
-            ? "0 8px 32px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.09)"
-            : "inset 0 0 0 1px rgba(255,255,255,0.07)",
+            ? "0 8px 32px rgba(0,0,0,0.55), inset 0 0 0 1px rgba(255,255,255,0.1)"
+            : "inset 0 0 0 1px rgba(255,255,255,0.08)",
         }}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        style={{ backdropFilter: "blur(18px)", borderRadius: 999 }}
-        className="hidden md:flex items-center gap-1 px-2 py-2"
+        style={{ backdropFilter: "blur(20px)", borderRadius: 999 }}
+        className="hidden md:flex items-center gap-1 px-3 py-2"
       >
-        {/* Left links */}
-        {navLinks.slice(0, 2).map((l) => (
-          <NavLink key={l.label} l={l} active={active} setActive={setActive} />
-        ))}
-
-        {/* Center logo pill */}
-        <a
-          href="#top"
-          onClick={(e) => { smoothScroll(e, "#top"); setActive("home"); }}
-          className="mx-1 rounded-full overflow-hidden flex items-center justify-center"
-          style={{
-            background: "rgba(255,255,255,0.06)",
-            border: "1px solid rgba(255,255,255,0.1)",
-          }}
-          aria-label="Nexa Tech home"
-        >
-          <img
-            src={nexaLogo}
-            alt="Nexa Tech"
-            className="h-9 w-auto object-contain px-3"
-          />
-        </a>
-
-        {/* Right links */}
-        {navLinks.slice(2).map((l) => (
+        {navLinks.map((l) => (
           <NavLink key={l.label} l={l} active={active} setActive={setActive} />
         ))}
       </motion.nav>
 
-      {/* Mobile pill */}
-      <div className="md:hidden w-full">
+      {/* ── Mobile bar ── */}
+      <div className="md:hidden w-full px-4">
         <motion.div
           animate={{
-            backgroundColor: scrolled ? "rgba(10,10,10,0.85)" : "rgba(10,10,10,0.55)",
+            backgroundColor: scrolled ? "rgba(10,10,10,0.88)" : "rgba(10,10,10,0.55)",
             boxShadow: scrolled
               ? "0 8px 32px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.09)"
               : "inset 0 0 0 1px rgba(255,255,255,0.07)",
@@ -90,12 +81,8 @@ export function Navbar() {
           style={{ backdropFilter: "blur(18px)", borderRadius: 999 }}
           className="flex items-center justify-between px-4 py-2.5"
         >
-          <a
-            href="#top"
-            onClick={(e) => smoothScroll(e, "#top")}
-            aria-label="Nexa Tech home"
-          >
-            <img src={nexaLogo} alt="Nexa Tech" className="h-8 w-auto object-contain" />
+          <a href="#top" onClick={(e) => smoothScroll(e, "#top")} aria-label="Nexa Tech home">
+            <img src={nexaLogo} alt="Nexa Tech" className="h-9 w-auto object-contain" />
           </a>
           <button
             aria-label="Toggle menu"
@@ -115,7 +102,7 @@ export function Navbar() {
               transition={{ duration: 0.2 }}
               className="mt-2 rounded-3xl px-6 py-5"
               style={{
-                background: "rgba(10,10,10,0.92)",
+                background: "rgba(10,10,10,0.93)",
                 backdropFilter: "blur(18px)",
                 boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)",
               }}
@@ -172,21 +159,24 @@ function NavLink({
         smoothScroll(e, l.href);
         setActive(l.label.toLowerCase());
       }}
-      className="relative px-4 py-2 rounded-full text-xs font-medium uppercase tracking-widest transition-colors duration-200"
-      style={{ color: isActive ? "#fff" : "rgba(215,226,234,0.7)" }}
+      className="relative px-5 py-2.5 rounded-full text-sm font-medium uppercase tracking-widest transition-colors duration-200"
+      style={{ color: isActive ? "#fff" : "rgba(215,226,234,0.65)" }}
     >
       {isActive && (
         <motion.span
           layoutId="nav-pill"
           className="absolute inset-0 rounded-full"
-          style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.12)" }}
-          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          style={{
+            background: "rgba(255,255,255,0.11)",
+            border: "1px solid rgba(255,255,255,0.14)",
+          }}
+          transition={{ type: "spring", stiffness: 380, damping: 32 }}
         />
       )}
       <span className="relative z-10">{l.label}</span>
-      {/* dot indicator */}
+      {/* active dot */}
       <span
-        className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full transition-opacity duration-200"
+        className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full transition-opacity duration-200"
         style={{ background: "#5EE4E4", opacity: isActive ? 1 : 0 }}
       />
     </a>
