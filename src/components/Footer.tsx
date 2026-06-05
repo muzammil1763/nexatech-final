@@ -11,8 +11,8 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 const socials = [
-  { label: "Instagram @nexatech317", href: "https://instagram.com/nexatech317", icon: Instagram },
-  { label: "Facebook Nexa Tech", href: "https://www.facebook.com/profile.php?id=61588872067622", icon: Facebook },
+  { label: "Instagram", href: "https://instagram.com/nexatech317", icon: Instagram },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61588872067622", icon: Facebook },
   { label: "Linkedin", href: "https://www.linkedin.com/in/nexatech/", icon: Linkedin },
   { label: "WhatsApp", href: "https://wa.me/19284383309", icon: WhatsAppIcon },
 ];
