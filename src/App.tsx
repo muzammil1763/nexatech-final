@@ -6,18 +6,22 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { CustomCursor } from "@/components/CustomCursor";
 
 export function App() {
   return (
-    <main style={{ background: "#0C0C0C", overflowX: "clip", scrollBehavior: "smooth" }}>
-      <Navbar />
-      <HeroSection />
-      <MarqueeSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <ContactSection />
-      <Footer />
-    </main>
+    <>
+      <CustomCursor />
+      <main style={{ background: "#0C0C0C", overflowX: "clip", scrollBehavior: "smooth", cursor: "none" }}>
+        <Navbar />
+        <HeroSection />
+        <MarqueeSection />
+        <AboutSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <ContactSection />
+        <Footer />
+      </main>
+    </>
   );
 }
