@@ -36,16 +36,6 @@ export function Footer() {
       />
 
       <div className="flex flex-col items-center text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="uppercase tracking-[0.3em] text-xs md:text-sm opacity-70 mb-4"
-        >
-          / Made with care
-        </motion.p>
-
         <motion.h3
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

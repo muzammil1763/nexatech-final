@@ -90,15 +90,6 @@ export function ContactSection() {
       className="relative px-6 md:px-10 pt-24 md:pt-40 pb-10 md:pb-14"
       style={{ background: "#0C0C0C", overflowX: "clip" }}
     >
-      <FadeIn>
-        <p
-          className="uppercase tracking-[0.3em] text-xs md:text-sm mb-6 md:mb-10"
-          style={{ color: "#D7E2EA" }}
-        >
-          / Contact
-        </p>
-      </FadeIn>
-
       <AnimatedHeading />
 
       <div className="mt-14 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">

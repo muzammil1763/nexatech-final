@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FadeIn } from "../FadeIn";
-import { ArrowUpRight } from "lucide-react";
 
 const services = [
   { n: "01", name: "App Development", desc: "Building high-performance native and cross-platform mobile applications with intuitive interfaces, robust architecture, and scalable backends." },
@@ -66,9 +65,6 @@ export function ServicesSection() {
                 {s.desc}
               </p>
             </div>
-            <ArrowUpRight
-              className="relative z-10 w-8 h-8 md:w-12 md:h-12 flex-shrink-0 mt-2 transition-all duration-500 group-hover:text-white group-hover:rotate-45"
-            />
           </motion.div>
         ))}
       </div>
