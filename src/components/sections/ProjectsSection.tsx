@@ -5,14 +5,14 @@ import { LiveProjectButton } from "../ContactButton";
 import { projectImages } from "@/assets/images";
 
 const projects = [
-  { n: "01", category: "Real Estate",       name: "Haider Estate & Builders",   img: projectImages.p1 },
-  { n: "02", category: "Food & Delivery",   name: "Pizza 1981",                 img: projectImages.p2 },
-  { n: "03", category: "Real Estate",       name: "Abbott Nature",              img: projectImages.p3 },
-  { n: "04", category: "IoT Systems",       name: "Smart IoT Solutions",        img: projectImages.p4 },
-  { n: "05", category: "Web3",              name: "$BBB — Big Beautiful Bill",  img: projectImages.p5 },
-  { n: "06", category: "E-Commerce",        name: "Thread & Twill",             img: projectImages.p6 },
-  { n: "07", category: "Solar & Electric",  name: "Solar Care & Electric",      img: projectImages.p7 },
-  { n: "08", category: "Books & Community", name: "Pavulum",                    img: projectImages.p8 },
+  { n: "01", category: "Real Estate",       name: "Haider Estate & Builders",   img: projectImages.p1, url: "https://haiderestate.com/" },
+  { n: "02", category: "Food & Delivery",   name: "Pizza 1981",                 img: projectImages.p2, url: "https://pizza1981.vercel.app/" },
+  { n: "03", category: "Real Estate",       name: "Abbott Nature",              img: projectImages.p3, url: "https://abbot2.vercel.app/" },
+  { n: "04", category: "IoT Systems",       name: "Smart IoT Solutions",        img: projectImages.p4, url: "https://iotcore.vercel.app/" },
+  { n: "05", category: "Web3",              name: "$BBB — Big Beautiful Bill",  img: projectImages.p5, url: "https://bbb-coin.vercel.app/" },
+  { n: "06", category: "E-Commerce",        name: "Thread & Twill",             img: projectImages.p6, url: "https://bloom-and-thread-61.lovable.app/" },
+  { n: "07", category: "Solar & Electric",  name: "Solar Care & Electric",      img: projectImages.p7, url: "https://solarcare-electric.com/" },
+  { n: "08", category: "Books & Community", name: "Pavulum",                    img: projectImages.p8, url: "https://pavulum.com/" },
 ];
 
 function ProjectCard({
@@ -63,7 +63,7 @@ function ProjectCard({
               </span>
             </div>
           </div>
-          <LiveProjectButton />
+          <LiveProjectButton href={project.url} />
         </div>
 
         <div className="grid grid-cols-5 gap-3 sm:gap-4 md:gap-5">

@@ -16,10 +16,15 @@ export function ContactButton() {
   );
 }
 
-export function LiveProjectButton() {
+export function LiveProjectButton({ href }: { href: string }) {
   return (
-    <button className="rounded-full border-2 border-[#5EE4E4] text-[#5EE4E4] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base hover:bg-[#5EE4E4]/10 transition-colors">
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="rounded-full border-2 border-[#5EE4E4] text-[#5EE4E4] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base hover:bg-[#5EE4E4]/10 transition-colors"
+    >
       Live Project
-    </button>
+    </a>
   );
 }
