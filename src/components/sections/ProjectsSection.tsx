@@ -2,24 +2,17 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FadeIn } from "../FadeIn";
 import { LiveProjectButton } from "../ContactButton";
-import p1 from "@/assets/project-3.png.asset.json";
-import p2 from "@/assets/project-4.png.asset.json";
-import p3 from "@/assets/project-5.png.asset.json";
-import p4 from "@/assets/project-6.png.asset.json";
-import p5 from "@/assets/project-7.png.asset.json";
-import p6 from "@/assets/project-8.png.asset.json";
-import p7 from "@/assets/project-9.png.asset.json";
-import p8 from "@/assets/project-10.png.asset.json";
+import { projectImages } from "@/assets/images";
 
 const projects = [
-  { n: "01", category: "Real Estate", name: "Haider Estate & Builders", img1: p1.url, img2: p1.url, img3: p1.url },
-  { n: "02", category: "Food & Delivery", name: "Pizza 1981", img1: p2.url, img2: p2.url, img3: p2.url },
-  { n: "03", category: "Real Estate", name: "Abbott Nature", img1: p3.url, img2: p3.url, img3: p3.url },
-  { n: "04", category: "IoT Systems", name: "Smart IoT Solutions", img1: p4.url, img2: p4.url, img3: p4.url },
-  { n: "05", category: "Web3", name: "$BBB — Big Beautiful Bill", img1: p5.url, img2: p5.url, img3: p5.url },
-  { n: "06", category: "E-Commerce", name: "Thread & Twill", img1: p6.url, img2: p6.url, img3: p6.url },
-  { n: "07", category: "Solar & Electric", name: "Solar Care & Electric", img1: p7.url, img2: p7.url, img3: p7.url },
-  { n: "08", category: "Books & Community", name: "Pavulum", img1: p8.url, img2: p8.url, img3: p8.url },
+  { n: "01", category: "Real Estate",       name: "Haider Estate & Builders",   img: projectImages.p1 },
+  { n: "02", category: "Food & Delivery",   name: "Pizza 1981",                 img: projectImages.p2 },
+  { n: "03", category: "Real Estate",       name: "Abbott Nature",              img: projectImages.p3 },
+  { n: "04", category: "IoT Systems",       name: "Smart IoT Solutions",        img: projectImages.p4 },
+  { n: "05", category: "Web3",              name: "$BBB — Big Beautiful Bill",  img: projectImages.p5 },
+  { n: "06", category: "E-Commerce",        name: "Thread & Twill",             img: projectImages.p6 },
+  { n: "07", category: "Solar & Electric",  name: "Solar Care & Electric",      img: projectImages.p7 },
+  { n: "08", category: "Books & Community", name: "Pavulum",                    img: projectImages.p8 },
 ];
 
 function ProjectCard({
@@ -29,17 +22,20 @@ function ProjectCard({
   progress,
   range,
 }: {
-  project: typeof projects[number];
+  project: (typeof projects)[number];
   index: number;
   total: number;
-  progress: any;
+  progress: ReturnType<typeof useScroll>["scrollYProgress"];
   range: [number, number];
 }) {
   const targetScale = 1 - (total - 1 - index) * 0.03;
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div className="h-[85vh] sticky top-24 md:top-32 flex items-start justify-center" style={{ top: `${96 + index * 28}px` }}>
+    <div
+      className="h-[85vh] sticky flex items-start justify-center"
+      style={{ top: `${96 + index * 28}px` }}
+    >
       <motion.div
         style={{ scale, background: "#0C0C0C" }}
         className="w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] p-4 sm:p-6 md:p-8 flex flex-col gap-4 sm:gap-6"
@@ -53,7 +49,10 @@ function ProjectCard({
               {project.n}
             </div>
             <div className="flex flex-col gap-1 sm:gap-2">
-              <span className="uppercase tracking-widest font-light text-xs sm:text-sm" style={{ color: "#D7E2EA", opacity: 0.6 }}>
+              <span
+                className="uppercase tracking-widest font-light text-xs sm:text-sm"
+                style={{ color: "#D7E2EA", opacity: 0.6 }}
+              >
                 {project.category}
               </span>
               <span
@@ -70,26 +69,26 @@ function ProjectCard({
         <div className="grid grid-cols-5 gap-3 sm:gap-4 md:gap-5">
           <div className="col-span-2 flex flex-col gap-3 sm:gap-4 md:gap-5">
             <img
-              src={project.img1}
-              alt=""
+              src={project.img}
+              alt={project.name}
               loading="lazy"
-              className="w-full object-contain rounded-[40px] sm:rounded-[50px] md:rounded-[60px] bg-black"
+              className="w-full object-cover rounded-[24px] sm:rounded-[32px] md:rounded-[40px] bg-[#1a1a1a]"
               style={{ height: "clamp(130px, 16vw, 230px)" }}
             />
             <img
-              src={project.img2}
+              src={project.img}
               alt=""
               loading="lazy"
-              className="w-full object-contain rounded-[40px] sm:rounded-[50px] md:rounded-[60px] bg-black"
+              className="w-full object-cover rounded-[24px] sm:rounded-[32px] md:rounded-[40px] bg-[#1a1a1a]"
               style={{ height: "clamp(160px, 22vw, 340px)" }}
             />
           </div>
           <div className="col-span-3">
             <img
-              src={project.img3}
+              src={project.img}
               alt=""
               loading="lazy"
-              className="w-full h-full object-contain rounded-[40px] sm:rounded-[50px] md:rounded-[60px] bg-black"
+              className="w-full h-full object-cover rounded-[24px] sm:rounded-[32px] md:rounded-[40px] bg-[#1a1a1a]"
             />
           </div>
         </div>

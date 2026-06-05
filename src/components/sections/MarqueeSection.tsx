@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from "react";
-import p1 from "@/assets/project-3.png.asset.json";
-import p2 from "@/assets/project-4.png.asset.json";
-import p3 from "@/assets/project-5.png.asset.json";
-import p4 from "@/assets/project-6.png.asset.json";
-import p5 from "@/assets/project-7.png.asset.json";
-import p6 from "@/assets/project-8.png.asset.json";
-import p7 from "@/assets/project-9.png.asset.json";
-import p8 from "@/assets/project-10.png.asset.json";
+import { projectImages } from "@/assets/images";
 
-const images = [p1.url, p2.url, p3.url, p4.url, p5.url, p6.url, p7.url, p8.url];
+const images = [
+  projectImages.p1,
+  projectImages.p2,
+  projectImages.p3,
+  projectImages.p4,
+  projectImages.p5,
+  projectImages.p6,
+  projectImages.p7,
+  projectImages.p8,
+];
 
 const row1 = images.slice(0, 4);
 const row2 = images.slice(4);
@@ -19,7 +21,7 @@ function Tile({ src }: { src: string }) {
       src={src}
       loading="lazy"
       alt=""
-      className="rounded-2xl object-cover flex-shrink-0"
+      className="rounded-2xl object-cover flex-shrink-0 bg-[#1a1a1a]"
       style={{ width: 420, height: 270 }}
     />
   );
@@ -59,11 +61,21 @@ export function MarqueeSection() {
       style={{ background: "#0C0C0C" }}
     >
       <div className="flex flex-col gap-3">
-        <div className="flex gap-3" style={{ transform: `translateX(${t1}px)`, willChange: "transform" }}>
-          {tripled1.map((src, i) => <Tile key={`a${i}`} src={src} />)}
+        <div
+          className="flex gap-3"
+          style={{ transform: `translateX(${t1}px)`, willChange: "transform" }}
+        >
+          {tripled1.map((src, i) => (
+            <Tile key={`a${i}`} src={src} />
+          ))}
         </div>
-        <div className="flex gap-3" style={{ transform: `translateX(${t2}px)`, willChange: "transform" }}>
-          {tripled2.map((src, i) => <Tile key={`b${i}`} src={src} />)}
+        <div
+          className="flex gap-3"
+          style={{ transform: `translateX(${t2}px)`, willChange: "transform" }}
+        >
+          {tripled2.map((src, i) => (
+            <Tile key={`b${i}`} src={src} />
+          ))}
         </div>
       </div>
     </section>
