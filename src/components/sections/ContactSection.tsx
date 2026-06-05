@@ -7,8 +7,8 @@ import { ContactButton } from "../ContactButton";
 
 const socials = [
   { label: "Instagram @nexatech317", href: "https://instagram.com/nexatech317", icon: Instagram },
-  { label: "Facebook @nexatech317", href: "https://facebook.com/nexatech317", icon: Facebook },
-  { label: "Linkedin", href: "https://linkedin.com/company/nexatech317", icon: Linkedin },
+  { label: "Facebook Nexa Tech", href: "https://www.facebook.com/profile.php?id=61588872067622", icon: Facebook },
+  { label: "Linkedin", href: "https://www.linkedin.com/in/nexatech/", icon: Linkedin },
 ];
 
 const headingLines = ["Let's create", "together"];
