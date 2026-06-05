@@ -45,21 +45,23 @@ export function ServicesSection() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               style={{ background: "#0C0C0C", transformOrigin: "left" }}
             />
+            {/* Number */}
             <div
-              className="font-black flex-shrink-0 relative z-10 transition-colors duration-500 group-hover:text-white"
-              style={{ color: "#0C0C0C", fontSize: "clamp(3rem, 10vw, 140px)", lineHeight: 1 }}
+              className="font-black flex-shrink-0 relative z-10 text-[#0C0C0C] group-hover:text-white transition-colors duration-500"
+              style={{ fontSize: "clamp(3rem, 10vw, 140px)", lineHeight: 1 }}
             >
               {s.n}
             </div>
+            {/* Text */}
             <div className="flex flex-col gap-3 md:gap-4 pt-2 relative z-10 flex-1">
               <h3
-                className="font-medium uppercase transition-colors duration-500 group-hover:text-white"
+                className="font-medium uppercase text-[#0C0C0C] group-hover:text-white transition-colors duration-500"
                 style={{ fontSize: "clamp(1rem, 2.2vw, 2.1rem)", lineHeight: 1.1 }}
               >
                 {s.name}
               </h3>
               <p
-                className="font-light leading-relaxed max-w-2xl transition-all duration-500 opacity-60 group-hover:opacity-100 group-hover:text-white"
+                className="font-light leading-relaxed max-w-2xl text-[#0C0C0C] group-hover:text-white transition-colors duration-500"
                 style={{ fontSize: "clamp(0.85rem, 1.6vw, 1.25rem)" }}
               >
                 {s.desc}
