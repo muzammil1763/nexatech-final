@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import nexaLogo from "@/assets/nexa-logo.png";
+import nexaLogo from "@/assets/logonexanav.png";
 
 const navLinks = [
   { label: "Home",     href: "#top" },
@@ -47,7 +47,7 @@ export function Navbar() {
         <img
           src={nexaLogo}
           alt="Nexa Tech"
-          className="h-14 w-auto object-contain drop-shadow-lg"
+          className="h-28 w-auto object-contain drop-shadow-lg"
         />
       </a>
 
@@ -82,7 +82,7 @@ export function Navbar() {
           className="flex items-center justify-between px-4 py-2.5"
         >
           <a href="#top" onClick={(e) => smoothScroll(e, "#top")} aria-label="Nexa Tech home">
-            <img src={nexaLogo} alt="Nexa Tech" className="h-9 w-auto object-contain" />
+            <img src={nexaLogo} alt="Nexa Tech" className="h-12 w-auto object-contain" />
           </a>
           <button
             aria-label="Toggle menu"
