@@ -6,6 +6,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { CEOSection } from "@/components/sections/CEOSection";
 import { CustomCursor } from "@/components/CustomCursor";
 
 export function App() {
@@ -20,6 +21,7 @@ export function App() {
         <ServicesSection />
         <ProjectsSection />
         <ContactSection />
+        <CEOSection />
         <Footer />
       </main>
     </>
